@@ -77,8 +77,28 @@
             </button>
       </div>
       <div>
-      <input src="/modkoi.ipa" id="input" multiple>
-      <a href="/modkoi.ipa" download>Download</a></div>
+      <embed> id="modios" src="/modkoi.ipa" alt="modkoi">
+            <button> type="button" class="button" data-download="modios">Download</button>
+
+            <script>
+                  const downloadLinks = document.querySelectorAll("{data-download}");
+                  
+                  dowloadLinks.forEach(button => {
+                      const id = button.dataset.download;
+                      const embed = document.getElementById(id);
+                      const a = document.createElement(a);
+
+                      a.href = embed.src
+                      a.downloaf = "";
+                      a.style.display = "none";
+
+                     button.addEventListener("click", () => {
+                           document.body.appendChild(a);
+                           a.click();
+                           document.body.removeChild(a);
+                     });
+                  });      
+            </script>
       </div>
      
       <script src="app.js"></script>
